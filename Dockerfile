@@ -32,4 +32,4 @@ CMD jupyter notebook \
     --ip=* \
     --MappingKernelManager.time_to_dead=10 \
     --MappingKernelManager.first_beat=3 \
-    --notebook-dir=/notebooks-dir-julia/
+    --notebook-dir=/notebooks-dir/
