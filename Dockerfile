@@ -22,5 +22,14 @@ RUN julia -e 'Pkg.init(); Pkg.add("IJulia")' && \
     julia -e 'Pkg.add("Distributions"); Pkg.add("NLsolve"); Pkg.add("Interact")' && \
     julia -e 'Pkg.add("PyCall"); Pkg.add("PyPlot"); Pkg.add("Pandas")'
 
+RUN julia -e 'Pkg.init(); Pkg.add("Winston")' && \
+	julia -e 'Pkg.add("QuantEcon")'
+
 # check out ZMQ and IJulia to get them working
 RUN julia -e 'Pkg.checkout("ZMQ"); Pkg.checkout("IJulia");'
+
+CMD jupyter notebook \
+    --ip=* \
+    --MappingKernelManager.time_to_dead=10 \
+    --MappingKernelManager.first_beat=3 \
+    --notebook-dir=/notebooks-dir-julia/
