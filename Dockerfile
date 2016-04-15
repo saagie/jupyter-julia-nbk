@@ -22,8 +22,10 @@ RUN julia -e 'Pkg.init(); Pkg.add("IJulia")' && \
     julia -e 'Pkg.add("Distributions"); Pkg.add("NLsolve"); Pkg.add("Interact")' && \
     julia -e 'Pkg.add("PyCall"); Pkg.add("PyPlot"); Pkg.add("Pandas")'
 
+RUN apt-get update && apt-get install -y libx11-dev libpng3 gettext tcl8.5 libpango1.0-0 tk8.5 hdf5-tools
+
 RUN julia -e 'Pkg.init(); Pkg.add("Winston")' && \
-	julia -e 'Pkg.add("QuantEcon")'
+	julia -e 'Pkg.add("QuantEcon"); Pkg.add("Mongo"); Pkg.add("Hive");'
 
 # check out ZMQ and IJulia to get them working
 RUN julia -e 'Pkg.checkout("ZMQ"); Pkg.checkout("IJulia");'

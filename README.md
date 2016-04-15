@@ -1,8 +1,7 @@
 # Jupyter Datascience Notebook for julia
 
 ## Run with :
-	* docker run -p 8888:8888 saagie/julia-notebook:latest
-
+	docker run -p 8888:8888 -v /path/to/data/notebooks/dir:/notebooks-dir saagie/julia-notebook:latest
 
 ## Libraries :
 	* Data Processing
@@ -22,11 +21,11 @@
 
 	* Database connection
 		* Hive
-
+		* Mongo
 	* Utils
 		* Interact
 		* PyCall
 
 ## Install libraries with :
-	* Pkg.add("libraryName")
+	Pkg.add("libraryName")
 
