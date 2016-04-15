@@ -1,6 +1,7 @@
 # Jupyter Datascience Notebook for julia
 
-docker run -p 8888:8888 saagie/julia-notebook:latest
+## Run with :
+	* docker run -p 8888:8888 saagie/julia-notebook:latest
 
 
 ## Libraries :
@@ -26,6 +27,6 @@ docker run -p 8888:8888 saagie/julia-notebook:latest
 		* Interact
 		* PyCall
 
-# Install libraries with :
+## Install libraries with :
 	* Pkg.add("libraryName")
 
